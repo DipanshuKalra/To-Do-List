@@ -1,0 +1,43 @@
+<%- include('partials/header.ejs') %>
+
+    <!-- This section constitutes the main content of the webpage -->
+    <div id="displayTextOuterDiv">
+        <div id="displayTextInnerDiv">
+            <%= locals.displayText %>
+        </div>
+    </div>
+    <main>
+        <div class="container-fluid item-list">
+            <ul class="list-group">
+                <% if(locals.data) { %>
+                    <% for(var i=0; i<locals.data.length; i++) { %>
+                        <form action="/delete" method="POST">
+                            <li class="list-group-item">
+                                <input type="checkbox" name="checkbox" value="<%= data[i]._id %>" id="todayItem<%= i %>" class="form-check-input me-1" onChange="this.form.submit()">
+                                <label id="todayItem<%= i %>Label" for="todayItem<%= i %>" class="form-check-label" style="word-break: break-word;">
+                                    <%= locals.data[i].name %>
+                                </label>
+                                <input type="hidden" name="listType" value="todayList">
+                            </li>
+                        </form>
+                    <% } %>
+                <% } %>
+            </ul>
+        </div>
+        <div class="addItemDiv">
+            <form action="/add" method="POST" id="addItemForm">
+                <input type="text" name="addTodayItem" id="addTodayItem">
+                <button type="submit" class="btn btn-primary">Add Item</button>
+                <input type="hidden" name="listType" value="todayList"></input>
+            </form>
+        </div>
+    </main>
+
+    <!-- This section constitutes the footer of the webpage -->
+    <footer>
+
+    </footer>
+    <script src="scripts/today.js"></script>
+    </body>
+
+    </html>

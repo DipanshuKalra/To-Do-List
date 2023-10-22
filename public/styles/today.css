@@ -1,0 +1,47 @@
+body {
+    padding: 0;
+    margin: 0;
+    margin-top: 200px;
+    background-color: #57375D;
+}
+
+.navbar-button {
+    margin: 10px;
+    width: 100px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#displayTextOuterDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#displayTextInnerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.item-list {
+    width: 400px;
+}
+
+.addItemDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#addItemForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
