@@ -1,17 +1,14 @@
-import e from 'express';
 import express from 'express';
 import mongoose from 'mongoose';
+import 'dotenv/config'
 
 const app = express();
 const port = 3000;
-const mongoDBpassword = "Hello123";
 
-// const todayList = ["Go to the market", "Buy some vegetables"];
-// const workList = [];
 const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-mongoose.connect(`mongodb+srv://admin-dipanshu:${mongoDBpassword}@cluster0.tfgypwl.mongodb.net/todolistDB`, {useNewUrlParser: true});
+mongoose.connect(`${process.env.MONGO_CONNECT}`, {useNewUrlParser: true});
 
 const itemSchema = new mongoose.Schema({
     name: String,
